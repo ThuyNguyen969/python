@@ -21,8 +21,7 @@ while (i <= n):
 # Bài 4: Viết chương trình trả ra từ điển với key là các số trong list, value là số lần xuất hiện của số trong list
 """
 my_list = [10, 21, 21, 40, 40, 52, 52, 1, 1, 2, 2, 2, 2, 11, 11, 11, 11, 25, 24, 24, 60, 40]
-Trả ra
-{10: 1, 21: 2, 40: 3, 52: 2, 1: 2, 2: 4, 11: 4, 25: 1, 24: 2, 60: 1}
+Trả ra {10: 1, 21: 2, 40: 3, 52: 2, 1: 2, 2: 4, 11: 4, 25: 1, 24: 2, 60: 1}
 """
 print("Bài 4: Đếm số")
 my_list = [10, 21, 21, 40, 40, 52, 52, 1, 1, 2,
@@ -45,6 +44,20 @@ Countdown to Xmas 2021: 112 days, 11:47:01.339588
 Countdown to Xmas 2021: 112 days, 11:46:56.324008
 Countdown to Xmas 2021: 112 days, 11:46:51.310473
 """
+print("Bài 3: Đếm ngược đến XMas 2021")
+import time
+import datetime
+sleep = int(input("\tNhập thời gian cần đợi (s): "));
+n = int(input("\tSố lần cần hiển thị: "));
+i = 1;
+now = datetime.datetime.now()
+xmas = datetime.datetime(2021, 12, 25, 0, 0, 0)
+t = xmas - now;
+while (t and i <= n):
+    now = datetime.datetime.now()
+    i+=1;
+    print('\tCountdown to Xmas 2021: ' +str(xmas - now));
+    time.sleep(sleep)
 
 
 # bài 2: Unique value Dictionary:

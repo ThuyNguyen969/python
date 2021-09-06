@@ -21,21 +21,19 @@ sao = '*'
 space = ' '
 for i in range(1,n+1):
   if(i==n):
-    print(j*space,n*2*sao)      
+    print(space*j,sao*n*2)      
   else:
-    print(j*space,i*sao) 
+    print(space*j,sao*i) 
   i+=1
   j-=1
 for j in range(1,n+1):
   i-=1
   if(i!=n):
-    print(n*space,i*sao) 
+    print(space*n,sao*i) 
 
 # Bài 4: Viết chương trình trả ra từ điển với key là các số trong list, value là số lần xuất hiện của số trong list
-"""
-my_list = [10, 21, 21, 40, 40, 52, 52, 1, 1, 2, 2, 2, 2, 11, 11, 11, 11, 25, 24, 24, 60, 40]
-Trả ra {10: 1, 21: 2, 40: 3, 52: 2, 1: 2, 2: 4, 11: 4, 25: 1, 24: 2, 60: 1}
-"""
+#my_list = [10, 21, 21, 40, 40, 52, 52, 1, 1, 2, 2, 2, 2, 11, 11, 11, 11, 25, 24, 24, 60, 40]
+#Trả ra {10: 1, 21: 2, 40: 3, 52: 2, 1: 2, 2: 4, 11: 4, 25: 1, 24: 2, 60: 1}
 print("Bài 4: Đếm số")
 my_list = [10, 21, 21, 40, 40, 52, 52, 1, 1, 2,
            2, 2, 2, 11, 11, 11, 11, 25, 24, 24, 60, 40]
@@ -51,12 +49,10 @@ print("\tKết quả: ",arr)
 
 
 # Bài 3: Viết chương trình in ra thời gian đếm ngược đến XMas 2021 sau mỗi khoảng thời gian nhất định.
-"""
-vd in ra sau mỗi 5s:
+"""vd in ra sau mỗi 5s:
 Countdown to Xmas 2021: 112 days, 11:47:01.339588
 Countdown to Xmas 2021: 112 days, 11:46:56.324008
-Countdown to Xmas 2021: 112 days, 11:46:51.310473
-"""
+Countdown to Xmas 2021: 112 days, 11:46:51.310473"""
 ###Tổ trưởng/ Giáo viên nếu chạy cả file thì bỏ comment phần số lần cần hiển thị n, i để dừng sớm như mog muốn nhé
 
 print("Bài 3: Đếm ngược đến XMas 2021")

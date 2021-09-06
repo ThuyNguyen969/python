@@ -2,7 +2,7 @@
 # Hãy viết chương trình in ra các hình sau (dùng ký tự '*' và ký tự space) với n là số dòng. Vd: n = 4:
 # Bài 5 - Hình 1:
 print("Bài 5 - Hình 1: chương trình in ra các hình sau (dùng ký tự '*' và ký tự space) với n là số dòng")
-n = int(input("Nhập số sao lớn nhất muốn in ra: "))
+n = int(input("Nhập số dòng: "))
 i = 1
 j = n-1
 sao = '*'
@@ -14,7 +14,7 @@ for i in range(1,n+1):
 
 # Bài 5 - Hình 2:
 print("Bài 5 - Hình 2: chương trình in ra các hình sau (dùng ký tự '*' và ký tự space) với n là số dòng")
-n = int(input("Nhập số sao lớn nhất muốn in ra: "))
+n = int(input("Nhập số dòng - khi in sẽ đảo ngược: "))
 i = 1
 j = n-1
 sao = '*'

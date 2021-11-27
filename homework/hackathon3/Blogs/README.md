@@ -1,6 +1,8 @@
 # Xây dựng trang Blogs cực kỳ đơn giản
 
 Xây dựng trang Blogs đơn giản, cho phép người dùng đăng và xem các bài post, chỉnh sửa bài post cũng như một API để tạo mẫu file .docx đơn giản
+JS DOM
+HTML CSS căn bản
 
 Mô tả một số page/chức năng:
 
@@ -18,7 +20,8 @@ Gợi ý các framework/library sử dụng:
 Tham khảo ví dụ mẫu tại link sau: http://banx.pythonanywhere.com/
 
 
-JS DOM
+-----
+JSDOM
 Tạo 1 trang HTML với nội dung là 3 đoạn văn. Hãy viết các function có tác dụng như sau:
 
 changeColor(): Đổi màu chữ của 3 đoạn văn theo thứ tự xanh, vàng, đỏ.
@@ -28,3 +31,12 @@ changeFontSize(x): Thay đổi kích thước font chữ của cả 3 đoạn v�
 increaseFontSize(paragraph): Tăng kích thước font chữ của đoạn văn mong muốn (tham số truyền vào là id đoạn văn hoặc thứ tự đoạn văn) lên 1 pixel so với kích thước hiện tại, kích thước tăng lên không được vượt quá 30 pixels (Sử dụng sau khi gọi hàm changeFontSize() hoặc dùng window.getComputedStyle).
 decreaseFontSize(paragraph): Giảm kích thước font chữ của đoạn văn mong muốn (tham số truyền vào là id đoạn văn hoặc thứ tự đoạn văn) xuống 1 pixels so với kích thước hiện tại, kích thước giảm xuống không vượt quá 10 pixels.
 Nâng cao: Tạo ra các nút ở cuối trang và gán sự kiện onclick để khi bấm nút thì gọi hàm tương ứng.
+
+-----
+HTML
+Tạo 1 trang web Blog với giao diện tương tự như ảnh sau, style càng giống càng tốt.
+Style đẹp, giống bản vẽ > 70%. Code HTML đúng cú pháp, đặt tên class có ý nghĩa.
+Nội dung tự chuẩn bị một nội dung tử tế có ý nghĩa và không quá ngắn (ví dụ một bài báo, một mẩu chuyện, review, chia sẻ, ...).
+Trong nội dung phải có ảnh minh họa, ảnh phải có thuộc tính alt và không bị méo.
+Tiêu đề bài viết sử dụng thẻ h1. Nếu bài viết dài thì cần chia làm nhiều đoạn văn (dùng thẻ p) và có tiêu đề (sử dụng h2, h3, ...).
+Những chỗ nào có thể bấm vào để chuyển trang thì sử dụng thẻ a, để link là # làm placeholder.

@@ -12,6 +12,10 @@ class Card:
     def __init__(self, rank, suit):
         self.rank = rank
         self.suit = suit
+        
+    @property
+    def rank(self):
+        return 1 if self._rank == 'A' else self._rank
     
     def __str__(self):
         '''Hiển thị lá bài'''

@@ -57,7 +57,7 @@ def history():
 
     Bao gồm tổng số game đã chơi, số game chiến thắng ứng với mỗi người chơi (sử dụng GROUP BY và các hàm tổng hợp)
     '''
-    sql = "SELECT winner, COUNT(winner) as count FROM games WHERE DATE(play_at) = CURDATE() GROUP BY winner ORDER BY `count` DESC"
+    sql = "SELECT winner, COUNT(winner) as count FROM games  GROUP BY winner ORDER BY `count` DESC"
     cursor.execute(sql)
     return cursor.fetchall()
 

@@ -12,20 +12,26 @@ class Player:
     @property
     def point(self):  # trung bình
         '''Tính điểm cho bộ bài'''
+        '''
         total_point = 0
         for card in self.cards:
             total_point += card.rank
         p = total_point % 10
         if p == 0: p = 10    
         return p  
+        '''
+        total = sum([int(c) for c in self.cards])
+
+        total %= 10
+        return 10 if total == 0 else total
 
     @property
-    def biggest_card(self, cards):
+    def biggest_card(self):
         '''
         Tìm lá bài lớn nhất
         Trong trường hợp điểm bằng nhau, sẽ so sánh lá bài lớn nhất để tìm ra người chiến thắng
         '''
-        return max(self)
+        return max(self.cards)
 
     def add_card(self, card):
         '''Thêm một lá bài vào bộ (rút từ bộ bài)'''

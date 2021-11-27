@@ -169,6 +169,6 @@ class Game:
         if historys is not None:
             for history in historys:
                count_all += history['count']
-               list_str += f"{history['winner']} thắng {history['count']} ván\n"   
-        print (f"Hôm nay đã chơi: {count_all} ván")     
+               list_str += f"\t{history['winner']} \tthắng {history['count']} ván\n"   
+        print (f"Tổng số ván đã chơi: {count_all} ván")     
         print (list_str)  

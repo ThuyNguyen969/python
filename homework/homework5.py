@@ -15,6 +15,6 @@ Cho một list gồm danh sách điểm thi của sinh viên 1 lớp. Viết ch�
 vd sort_list_last([(1, 2, 5), (9, 1, 2), (6, 4, 4), (3, 2, 3), (10, 2, 1)]) == [(10, 2, 1), (9, 1, 2), (3, 2, 3), (6, 4, 4), (1, 2, 5)]
 '''
 
-'''### Bài 5: Xử lý chuỗi - Đảo ngược từ và kiểu hoa thường ### 
+'''### Bài 3: Xử lý chuỗi - Đảo ngược từ và kiểu hoa thường ### 
 Cho 1 chuỗi A (vd: "tHE fOX iS cOMING fOR tHE cHICKEN"). Viết hàm đảo ngược thứ tự các từ trong chuỗi và đổi tất cả các chữ cái từ hoa thành thường và ngược lại. (kết quả là "Chicken The For Coming Is Fox The")
 '''

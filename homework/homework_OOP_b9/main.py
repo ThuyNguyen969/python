@@ -1,5 +1,10 @@
-## Bài 
-## Bài Đọc file Json
+"""Bổ sung thêm phương thức from_json cho class BankAccount để nạp dữ liệu từ file JSON
+
+Đầu vào là đường dẫn file JSON (lưu ý xử lý path)
+Kết quả trả về là một list accounts
+Sử dụng vòng lặp, in list theo dạng bảng
+Triển khai thêm phương thức magic method phù hợp để in ra với hàm print
+"""
 import os
 import sys
 import json
@@ -64,7 +69,10 @@ class BankAccount:
                     cls1(obj["account_number"], obj["account_name"], int(obj["balance"])))
         return accounts
 
-print("\nDanh sách account đọc từ file json:")
+print("\nDanh sách account đọc từ file json:\n")
+print(f"| {'Number':9} | {'Account Name':15} | {'Balance':15} |")
+print(f"|{'-' * 11}|{ '-' * 17 }|{'-' * 17}|")
+
 json_accounts = BankAccount.from_json(json_file)
 for account in json_accounts:
     account.display()

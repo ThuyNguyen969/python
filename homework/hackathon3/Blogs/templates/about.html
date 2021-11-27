@@ -6,203 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <script type="text/javascript" language="javascript" src="{{url_for('static',filename='script.js')}}"></script>
   </head>
+
   <body>
-    <script src="script.js"></script>
+    
     {% include 'header_menu.html' %}
+
     <div style="padding: 0px 120px">
-      <section class="section">
-        <h2 class="section-header" style="margin-top: 0px" center></h2>
-        <p style="color: #989898; font-size: 16px">
-          Post in: <b>author</b>
-          <span style="padding-left: 20px">Last updated: Sep-2021 </span>
-          <span style="padding-left: 20px">9 viewed </span>
-        </p>
-        <div class="entry-content">
-          <blockquote>
-            <p>
-              Trang About được tổng hợp từ ba bài HMTM cơ bản, JSDOM,
-              Hackathon.Blog.....
+        <section class="section">
+            <h2 class="section-header" style="margin-top: 0px" center></h2>
+            <p style="color: #989898; font-size: 16px">
+                Post in: <b>author</b>
+                <span style="padding-left: 20px">Last updated: Nov-2021 </span>
+                <span style="padding-left: 20px">9 viewed </span>
             </p>
-          </blockquote>
-          <div id="paragraph1">
-            <h3>
-                #1 Blogs đơn giản, cho phép người dùng đăng và xem các bài post, chỉnh sửa bài post cũng như một API để tạo mẫu file .docx đơn giản
-            </h3>
-            <p>
-                <li>
-                Trang chủ (homepage): Hiển thị tất cả các bài viết (theo thứ tự mới nhất -> cũ nhất), đồng thời có một form cho phép người dùng nhập thông tin để tạo một post mới
-                </li>
-            </p>
-            <p>
-                <li>
-                Trang cập nhật (edit): Hiển thị form kèm dữ liệu hiện tại về một
-                bài post cụ thể, cho phép người dùng chỉnh sửa thông tin, sau đó
-                cập nhật bài post đó
-                </li>
-            </p>
-            <p>
-                <li>
-                Trang giới thiệu (about) giới thiệu thông tin về bản thân/trang
-                web/...
-                </li>
-            </p>
-            <p>
-                <li>
-                Trang tạo file docx (letter) hiển thị form cho phép người dùng
-                nhập một số thông tin, tạo file .docx theo mẫu (tùy chỉnh), sau đó
-                hiển thị link cho phép người dùng tải file về
-                </li>
-            </p>
-        </div>
-        <div id="paragraph2">
-            <h3>
-                #2 Trang Blogs sử dụng HTML, CSS, Javascript đơn giản để hiển thị
-                thông tin có nhúng ảnh, chuyển trang. Đi xuống block cuối cùng có
-                thể demo việc dùng JS để:
-            </h3>
-            <p>
-                <li>
-                Đổi màu theo thứ tự <font color="blue">xanh</font>
-                <font color="red">đỏ</font> <font color="yellow">vàng </font>
-                </li>
-            </p>
-            <p>
-                <li>
-                Bạn cũng có thể thay đổi màu nền, thay đổi kích thước chữ, đổi nội
-                dung,....
-                </li>
-            </p>
-        </div>
-        <div id="paragraph3">
-            <h3>#3 Những hình ảnh của lớp Python for QC nè</h3>
-            <blockquote>
-                <p>
-                Các thầy bên TT Techmaster & các học viên QC xinh đẹp, ko có PS
-                nên cắt hình bằng snagit ahihi.......!<br>
-                Dù công việc bận rộn hay học hành chăm chỉ thì vẫn luôn xinh...
-                </p>
-            </blockquote>
-            <p style="text-align: center">
-                <a href="#"><img src="../images/img.jpg" alt="luôn xinh" style="width:800px;height:480px;" /></a><br>
-            </p>
-        </div>
-        <div>
-          <marquee width="40%">
-            <h3>Khu vực trải nghiệm tính năng của JS</h3>
-          </marquee>
-        
-            <!--JS-->
+            <div class="entry-content">
+                <blockquote>
+                    <p>
+                    Trang Blogs được tổng hợp từ ba bài HMTM cơ bản, JSDOM,
+                    Hackathon.Blog.....<br>
+                    Nguồn tham khảo: hanhdt1
+                    </p>
+                </blockquote>
                 <div>
-                    <p id="paragraph1">
-                        Review tour Hà Giang là bài viết chia sẻ lại 1 số trải nghiệm trong quá
-                        trình đi tour Hà Giang do công ty Hà Giang trẻ tổ chức. Hà Giang là một
-                        vùng đất tuyệt vời để khám phá trên những cung đường thiên nhiên hùng
-                        vĩ. Mình đã có cơ hội tới Hà Giang trong các chuyến đi tự túc, tuy nhiên
-                        lần này mình quyết định chọn dịch vụ tour của Hà Giang Trẻ để có thêm
-                        trải nghiệm và chia sẻ từ những người địa phương, giúp mình hiểu sâu sắc
-                        hơn về văn hóa, phong tục của Hà Giang.
+                    <h3>
+                        #1 Blogs đơn giản, cho phép người dùng đăng và xem các bài post, chỉnh sửa bài post cũng như một API để tạo mẫu file .docx đơn giản
+                    </h3>
+                    <p>
+                        <li>
+                        Trang chủ (homepage): Hiển thị tất cả các bài viết (theo thứ tự mới nhất -> cũ nhất), đồng thời có một form cho phép người dùng nhập thông tin để tạo một post mới
+                        </li>
                     </p>
-                    <p id="paragraph2">
-                        Do cả đoàn đã thống nhất xuất phát từ sớm nên 6h xe tới đón mọi người để
-                        bắt đầu hành trình. Sau khi dùng bữa sáng, cả đoàn di chuyển về làng văn
-                        hóa dệt thổ cẩm Lũng Tám của người Tày. Tại đây mọi người được thực tế
-                        chứng kiến sự kỳ công để có được những bộ quần áo từ vải lanh, cả đoàn
-                        cũng được trải nghiệm các công đoạn nhỏ trong quá trình dệt hay trang
-                        trí.
+                    <p>
+                        <li>
+                        Trang cập nhật (edit): Hiển thị form kèm dữ liệu hiện tại về một
+                        bài post cụ thể, cho phép người dùng chỉnh sửa thông tin, sau đó
+                        cập nhật bài post đó
+                        </li>
                     </p>
-                    <p id="paragraph3">
-                        Sau đó cả đoàn ghé thăm nhà trưng bày và giới thiệu sản phẩm từ vải
-                        lanh. Mọi người được thử những bộ quần áo với màu sắc ấn tượng, đặc
-                        trưng cho các dân tộc ở Hà Giang, không chỉ thu hút khách du lịch Việt
-                        Nam mà các bạn nước ngoài cũng rất yêu thích các mẫu mã này.
+                    <p>
+                        <li>
+                        Trang giới thiệu (about) giới thiệu thông tin về bản thân/trang
+                        web/...
+                        </li>
+                    </p>
+                    <p>
+                        <li>
+                        Trang tạo file docx (letter) hiển thị form cho phép người dùng
+                        nhập một số thông tin, tạo file .docx theo mẫu (tùy chỉnh), sau đó
+                        hiển thị link cho phép người dùng tải file về
+                        </li>
                     </p>
                 </div>
-
-          <div>
-            <button onclick="changeColor()" class="button">Đổi màu text</button>
-            <button
-              onclick="window.location.reload()"
-              class="button button_reset"
-            >
-              Reset
-            </button>
-          </div>
-          <div>
-            Nhập màu nền: <input type="text" id="background_color" size="10" />
-            <button
-              onclick="changeBgColor(document.getElementById('background_color').value)"
-              class="button"
-            >
-              Đổi màu nền
-            </button>
-          </div>
-
-          <div>
-            Thay đổi
-            <select id="param1">
-              <option value="0">Đoạn 1</option>
-              <option value="1">Đoạn 2</option>
-              <option value="2">Đoạn 3</option>
-            </select>
-            Thành
-            <select id="param2">
-              <option value="0">Đoạn 1</option>
-              <option value="1">Đoạn 2</option>
-              <option value="2">Đoạn 3</option>
-            </select>
-            <button
-              class="button"
-              onclick="copyContent(document.getElementById('param1').value, document.getElementById('param2').value)"
-            >
-              Đổi
-            </button>
-          </div>
-
-          <div>
-            Nhập kích thước font: <input type="text" id="font_size" size="3" />
-            <button
-              onclick="changeFontSize(document.getElementById('font_size').value)"
-              class="button"
-            >
-              Áp dụng
-            </button>
-          </div>
-
-          <div>
-            Tăng kích thước font
-            <select id="font_increase">
-              <option value="0">Đoạn 1</option>
-              <option value="1">Đoạn 2</option>
-              <option value="2">Đoạn 3</option>
-            </select>
-            <button
-              class="button"
-              onclick="increaseFontSize(document.getElementById('font_increase').value)"
-            >
-              Áp dụng
-            </button>
-
-            Giảm kích thước font
-            <select id="font_decrease">
-              <option value="0">Đoạn 1</option>
-              <option value="1">Đoạn 2</option>
-              <option value="2">Đoạn 3</option>
-            </select>
-            <button
-              class="button"
-              onclick="decreaseFontSize(document.getElementById('font_decrease').value)"
-            >
-              Áp dụng
-            </button>
-          </div>
-        </div>
-      </section>
+                <div>
+                    <h3>
+                        #2 Trang Blogs sử dụng HTML, CSS, Javascript đơn giản để hiển thị
+                        thông tin có nhúng ảnh, chuyển trang. Đi xuống block cuối cùng có
+                        thể demo việc dùng JS để:
+                    </h3>
+                    <p>
+                        <li>
+                        Đổi màu theo thứ tự <font color="blue">xanh</font>
+                        <font color="red">đỏ</font> <font color="yellow">vàng </font>
+                        </li>
+                    </p>
+                    <p>
+                        <li>
+                        Bạn cũng có thể thay đổi màu nền, thay đổi <font size="10"> kích thước</font> chữ, đổi nội
+                        dung,....
+                        </li>
+                    </p>
+                </div>
+                <div>
+                    <h3>#3 Những hình ảnh của lớp Python for QC nè</h3>
+                    <blockquote>
+                        <p>
+                        Các thầy bên TT Techmaster & các học viên QC xinh đẹp, ko có PS
+                        nên cắt hình bằng snagit ahihi.......!<br>
+                        Dù công việc bận rộn hay học hành chăm chỉ thì vẫn luôn xinh...
+                        </p>
+                    </blockquote>
+                    <p style="text-align: center">
+                        <a href="#"><img src="../images/a.jpg" alt="luôn xinh nhé" style="width:800px;height:480px;" /></a><br>
+                    </p>
+                </div>
+                <div>
+                    <h3>#4 Để trải nghiệm dùng JS xin mời sang tab JSDOM nhé</h3>
+                </div>
+            </div>
+        </section>
     </div>
+  </body>
 
     <footer class="footer">
-      <hr />
-      <p class="copy-right">@Footer by Footer</p>
+        <hr />
+        <p class="copy-right">@Footer by Footer</p>
     </footer>
-  </body>
+
 </html>

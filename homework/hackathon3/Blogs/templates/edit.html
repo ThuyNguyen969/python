@@ -13,11 +13,7 @@
     </head>
     <body>
         {% include 'header_menu.html' %}
-        {# 
-            Jinja template 
-            {% %} - một câu lệnh python 
-            {{ }} - một biểu thức, in ra kết quả 
-        #} 
+
         <h1>Blogs Page</h1>
         {% if not blog %}
             <h3>404 - Bài viết không tồn tại</h3>
@@ -49,12 +45,9 @@
             {% endif %}
         {% endif %}
         
-        <footer class="footer">
-            <hr>
-            <p class="copy-right">Copy-right by Blogs</p>
-        </footer>
-           
-
-
+    <footer class="footer">
+        <hr />
+        <p class="copy-right">@Footer by Footer</p>
+    </footer>
     </body>
 </html>

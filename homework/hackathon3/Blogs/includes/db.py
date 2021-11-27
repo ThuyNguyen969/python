@@ -39,7 +39,7 @@ def get_all():
     return blogs
 
 def get_one(id):
-    
+
     sql = 'SELECT * FROM blog WHERE id="'+id+'"'
     cursor.execute(sql)
     blog = cursor.fetchone()

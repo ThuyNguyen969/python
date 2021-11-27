@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homepage</title>
+        <!-- Liên kết đến các file khác như css, hình ảnh, ... trong thư mục static -->
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+        <script type="text/javascript" language="javascript" src="{{url_for('static',filename='script.js')}}"></script>
+    </head>
+
+  <body>
+    {% include 'header_menu.html' %}
+
+    <div style="padding: 0px 120px">
+        <section class="section">
+            <marquee width="40%">
+                <h3>Khu vực trải nghiệm tính năng của JS</h3>
+            </marquee>
+            <h1>JS cơ bản</h1>
+      <div> 
+        <p id="paragraph1">
+            1. JavaScript là gì?<br>
+                &nbsp; &nbsp; &nbsp; JavaScript là một ngôn ngữ lập trình máy tính định hướng đối tượng, là ngôn ngữ động và nhẹ. Nó cho phép ta xây dựng nội dung web tương tác. Cụ thể hơn, JavaScript có thể tính toán, thao tác và phê duyệt dữ liệu cũng như cập nhật và thay đổi cả HTML và CSS của trang web. Với JavaScript bạn có thể xây dựng một số lượng lớn các ứng dụng web mạnh mẽ.
+        </p>
+        <p id="paragraph2">
+            2. Tại sao bạn nên sử dụng JavaScript?<br>
+                &nbsp; &nbsp; &nbsp; Bạn có biết rằng vượt qua cả Java và C ++ chính là JavaScript. Đây là một trong những ngôn ngữ được các nhà tuyển dụng yêu cầu bạn biết. Bên cạnh HTML và CSS, JavaScript là một phần thiết yếu của công nghệ phát triển web. Bởi vậy nếu bạn muốn tham gia phát triển web thì việc học JavaScipt cơ bản là điều bắt buộc. JavaScript là một công nghệ đa năng được sử dụng cho cả Front-End và Back-End của ứng dụng web. JavaScript cơ bản được sử dụng để phát triển ứng dụng di động, thậm chí là phát triển trò chơi. 
+        </p>
+        <p id="paragraph3">
+            3. Làm thế nào để bắt đầu?<br>
+                &nbsp; &nbsp; &nbsp; Cài đặt<br>
+                &nbsp; &nbsp; &nbsp; Chương trình mẫu<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Khi đã hoàn thành các cài đặt cần thiết xong bạn có thể bắt đầu lập trình bằng JavaScript.
+
+        </p>
+      </div>
+      <div>
+        <button onclick="changeColor()" class="button">Đổi màu text theo thứ tự</button>
+        <button onclick="window.location.reload()" class="button button_reset">Reset</button><br><br>
+      </div>
+      <div>
+          Nhập màu nền: (Ex: red, blue, ...)<input type="text" id="background_color" size="10">
+          <button onclick="changeBgColor(document.getElementById('background_color').value)" class="button">Đổi màu nền</button><br><br>
+      </div>
+
+      <div>
+          Thay đổi &nbsp; &nbsp; 
+          <select id="param1">
+             <option value="0">Đoạn 1</option>
+             <option value="1">Đoạn 2</option>
+             <option value="2">Đoạn 3</option>
+          </select>
+          &nbsp; &nbsp; &nbsp; Thành &nbsp; &nbsp; &nbsp; &nbsp; 
+          <select id="param2">
+            <option value="0">Đoạn 1</option>
+            <option value="1">Đoạn 2</option>
+            <option value="2">Đoạn 3</option>
+         </select>
+         <button class="button" onclick="copyContent(document.getElementById('param1').value, document.getElementById('param2').value)">Đổi</button><br><br>
+      </div>
+
+      <div>
+        Nhập kích thước font (VD: 11, 12,...) &nbsp;  <input type="text" id="font_size" size="5">
+        <button onclick="changeFontSize(document.getElementById('font_size').value)" class="button">Áp dụng</button><br><br>
+      </div>
+
+      <div>
+        Tăng kích thước font lên 1 pixel &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+        <select id="font_increase">
+           <option value="0">Đoạn 1</option>
+           <option value="1">Đoạn 2</option>
+           <option value="2">Đoạn 3</option>
+        </select>
+        <button class="button" onclick="increaseFontSize(document.getElementById('font_increase').value)">Áp dụng</button><br><br>
+      
+        Giảm kích thước font xuống 1 pixel &nbsp;&nbsp;
+        <select id="font_decrease">
+           <option value="0">Đoạn 1</option>
+           <option value="1">Đoạn 2</option>
+           <option value="2">Đoạn 3</option>
+        </select>
+        <button class="button" onclick="decreaseFontSize(document.getElementById('font_decrease').value)">Áp dụng</button><br><br>
+
+      </div>
+      <div>
+        
+      </div>
+        </section>
+    </div>
+  </body>
+    <footer class="footer">
+        <hr />
+        <p class="copy-right">@Footer by Footer</p>
+    </footer>
+</html>

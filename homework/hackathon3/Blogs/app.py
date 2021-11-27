@@ -1,12 +1,16 @@
 from os import error
 from flask import Flask, render_template, Response, request, redirect
 from includes import db
+from docx import Document
+from exception import exception
+from pymysql import connect, cursors
+#import other
 
 #from hackathon_3.includes.db import get_all
 app = Flask(__name__)
 
 # Jinja
-@app.route("/")
+@app.route("/")#
 def index():
     error = False
     blogs = db.get_all()
@@ -28,6 +32,10 @@ def add():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+@app.route("/js")
+def js():
+    return render_template("js.html")
 
 @app.route("/resignation-letter")
 def resignation_letter():

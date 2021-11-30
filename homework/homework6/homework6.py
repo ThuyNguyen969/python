@@ -21,7 +21,6 @@ def readfile_regex_image(filename):
     data_find = re.findall("GET (.*\.jpg)", content, re.MULTILINE)
     if(data_find):
         domain = get_domain(filename)
-        #loại bỏ image trùng
         data = set(data_find) 
         inc = 1;
         print ("Danh sách ảnh trong file: ")
@@ -33,7 +32,6 @@ def readfile_regex_image(filename):
 
     
 def get_domain(filename):
-    #regex như này thì đuôi file là google.com.vn vẫn hiểu được
     re_host = re.search("[\.](\w*(\.[a-z]{2,6}){1,2})$", filename) 
     if re_host: domain = "http://"+re_host.groups()[0]
     else: domain = ""

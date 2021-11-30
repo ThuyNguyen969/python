@@ -4,13 +4,14 @@ class Deck:
     '''
     Class đại diện cho bộ bài, bao gồm 36 lá
     '''
-    cards  = []
     
     def build(self):
         '''Tạo bộ bài'''
+        ranks = ('A', 2, 3, 4, 5, 6, 7, 8, 9)
+        suits = ('♠', '♣', '♦', '♥')
         self.cards = []
-        for i in range(1, 10):
-            for j in range(4):
+        for i in ranks:
+            for j in suits:
                 self.cards.append(Card(i,j))
         
     def shuffle_card(self):

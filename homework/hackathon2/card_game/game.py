@@ -3,7 +3,6 @@ from player import Player
 import db
 import sys
 
-
 class Game:
     '''
     Class chứa các chức năng chính của game
@@ -14,7 +13,7 @@ class Game:
     is_flipped = False
 
     def __init__(self):
-        pass
+        self._deck = Deck()
 
     def setup(self):
         print("Chào mừng đến với game đánh bài 3 cây ( vui thôi nha)")
@@ -91,7 +90,6 @@ class Game:
             self.list_players()
 
     def deal_card(self):
-        '''Chia bài cho người chơi'''
         if self.is_deal:
             raise ValueError("Bài đã chia rồi, lật bài đi thôi")
         deck = Deck()
@@ -101,44 +99,14 @@ class Game:
             for player in self.players:
                 player.add_card(deck.deal_card())
         self.is_deal = True  
-        print("Bài đã chia xong, xuống tiền nào")      
-        
-        '''
-        if self.is_deal:
-            raise ValueError("Bài đã chia rồi, lật bài đi thôi")
-        deck = Deck()
-        deck.build()
-        deck.shuffle_card()        
-        for i in range (3):
-            for player in self.players:
-                card = self.deck.deal_card()
-                player.add_card(card)
-        self.is_deal = True  
-        print("Bài đã chia xong, xuống tiền nào")   '''
-        
-        '''''''''
-        if self.is_dealt:
-            raise error.DealtError()
-        else:
-            for player in self.players:
-                player.remove_cards()
-
-            self.deck.build()
-            self.deck.shuffle_cards()
-
-            for i in range(Game.cards_per_player):
-                for player in self.players:
-                    card = self.deck.deal_card()
-                    player.add_card(card)
-
-            self.is_dealt = True
-            self.is_flipped = False
-            self.is_playing = True
-
-            print('Bài đã chia :)\nXuống tiền đi nào')'''
+        print("Bài đã chia xong, xuống tiền nào")   
 
     def flip_card(self):
         '''Lật bài tất cả người chơi, thông báo người chiến thắng'''
+        '''if not self.is_deal:
+            raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")'''
+            
+        #self.winner = max(self.players)
         if not self.is_deal:
             raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")
         for player in self.players:

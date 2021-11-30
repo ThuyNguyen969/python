@@ -12,7 +12,7 @@ class Player:
     @property
     def point(self):  # trung bình
         '''Tính điểm cho bộ bài'''
-        '''
+        
         total_point = 0
         for card in self.cards:
             total_point += card.rank
@@ -21,9 +21,8 @@ class Player:
         return p  
         '''
         total = sum([int(c) for c in self.cards])
-
         total %= 10
-        return 10 if total == 0 else total
+        return 10 if total == 0 else total'''
 
     @property
     def biggest_card(self):
@@ -44,3 +43,10 @@ class Player:
     def flip_card(self):
         '''Lật bài, hiển thị các lá bài'''
         return ' '.join([str(c) for c in self.cards])
+    
+    def __gt__(self, other):
+        if(self.point > other.point):
+            return True
+        elif self.point == other.point and self.biggest_card > other.biggest_card:
+            return True
+        else: return False   

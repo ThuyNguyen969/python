@@ -1,9 +1,9 @@
 class Player:
     '''
     Class đại diện cho mỗi người chơi
-
     Người chơi chỉ cần lưu tên, và các lá bài người chơi có
     '''
+
     cards = []
     def __init__(self, name):  # dễ
         self.cards = []
@@ -12,13 +12,17 @@ class Player:
     @property
     def point(self):  # trung bình
         '''Tính điểm cho bộ bài'''
+        
         total_point = 0
         for card in self.cards:
             total_point += card.rank
         p = total_point % 10
         if p == 0: p = 10    
         return p  
-    
+        '''
+        total = sum([int(c) for c in self.cards])
+        total %= 10
+        return 10 if total == 0 else total'''
 
     @property
     def biggest_card(self):
@@ -31,23 +35,19 @@ class Player:
     def add_card(self, card):
         '''Thêm một lá bài vào bộ (rút từ bộ bài)'''
         self.cards.append(card)
-        pass
 
     def remove_card(self):
         '''Reset bộ bài khi chơi game mới'''
         self.cards = []
 
-    
-
     def flip_card(self):
         '''Lật bài, hiển thị các lá bài'''
         return ' '.join([str(c) for c in self.cards])
-        
+        pass
+    
     def __gt__(self, other):
         if(self.point > other.point):
             return True
         elif self.point == other.point and self.biggest_card > other.biggest_card:
             return True
-        else: return False    
-                
-
+        else: return False   

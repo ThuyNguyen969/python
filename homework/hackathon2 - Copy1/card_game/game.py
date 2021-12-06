@@ -1,91 +1,95 @@
-from os import name
-
-from pymysql import NULL
 from deck import Deck
 from player import Player
 import db
-
+import sys
 
 class Game:
     '''
     Class chứa các chức năng chính của game
-
     Game chứa danh sách người chơi, và bộ bài
     '''
-    players = [] 
+    players = []
     is_deal = False
+    is_flipped = False
+
     def __init__(self):
-        pass
+        self._deck = Deck()
 
     def setup(self):
-        '''Khởi tạo trò chơi, nhập số lượng và lưu thông tin người chơi'''
-        while(True):
+        print("Chào mừng đến với game đánh bài 3 cây ( vui thôi nha)")
+        while True:
             try:
-                number_player = input("Nhập số người chơi: ")
-                if not number_player.isdigit():
-                    raise ValueError("Bạn chỉ được nhập số")
-                number_player = int(number_player)
-                if 2 <= number_player <= 12:    
+                number_player = int(input("Có bao nhiêu người muốn chơi: "))
+                if 1 < number_player < 12:
                     for i in range(number_player):
-                        name = input(f"Nhập tên người chơi {i+1}: ")
-                        if name == "": name = f"Player{i+1}"
-                        self.players.append(Player(name)) 
-                    break;    
+                        self.add_player()
+                    break      
                 else:
-                    raise ValueError ("Bạn chỉ được nhập từ 2 đến 12 người chơi")        
-            except BaseException as err:
-                print(f"{err}")                          
+                    raise ValueError ("Nhập từ 2 đến 12 người chơi")
+            except ValueError:
+                print("Bạn phải nhập vào số")            
 
     def guide(self):
-        '''Hiển thị menu chức năng/hướng dẫn chơi'''
-        if self.is_deal: text = "(Đã chia)"
-        else: text =  "(Chưa chia)"
-        print(" --------------------------------------")
-        print(f'1. Danh sách người chơi ({len(self.players)})')
+        num_of_player = len(self.players)
+        print('------------------------')
+        print(f'1. Danh sách người chơi ({num_of_player})')
         print('2. Thêm người chơi')
         print('3. Loại người chơi')
-        print(f'4. Chia bài {text}')
+        print('4. Chia bài')
         print('5. Lật bài')
         print('6. Xem lại game vừa chơi')
-        print('7. Xem lại lịch sử chơi')
-        print('8. Công an đến, tốc biến')
-        pass
+        print('7. Xem lịch sử chơi hôm nay')
+        print('8. Công an tới, tốc biến :)')
+
+        i = 0
+        while(i != 8):
+            try:
+                i = int(input("Nhập số để chọn tính năng tương ứng: "))
+                if i == 1:
+                    self.list_players()
+                elif i == 2:
+                    self.add_player()
+                elif i == 3:
+                    self.remove_player()
+                elif i == 4:
+                    self.deal_card()
+                elif i == 5:
+                    self.flip_card()
+                elif i == 6:
+                    self.last_game()
+                elif i == 7:
+                    self.history()
+                elif i != 8:
+                    raise ValueError("Bạn cần nhập các số từ 1 đến 8")
+            except BaseException as err:
+                print(f"\t{err}", 'nhập lại giá trị')
+        else:
+            print("Đã kết thúc game")
 
     def list_players(self):
-        '''Hiển thị danh sách người chơi'''
-        print("Danh sách người chơi:")
-        print("ID\tName")
+        print("Danh sách người chơi đang tham gia:")
+        print("\tID\tName")
         i = 0
         for player in self.players:
             i += 1
-            print(f"{i}\t{player.name}")
-        pass
-
+            print(f"\t{i}\t{player.name}")
+    
     def add_player(self):
-        '''Thêm một người chơi mới'''
-        num = len(self.players)
-        if(num == 12):
-            raise ValueError("Đã đạt số người chơi tối đa, không thể thêm được nữa nhé")
-
-        name = input(f"Nhập tên người chơi {num+1}: ") 
-        if name == "": name = f"Player{num+1}"
+        i = len(self.players)
+        name = input(f'Tên người chơi {len(self.players) + 1}: ').strip()[0:6]
         self.players.append(Player(name))
-        pass
 
     def remove_player(self):
-        '''
-        Loại một người chơi
-        Mỗi người chơi có một ID (có thể lấy theo index trong list)
-        '''
         if len(self.players) ==2:
-            raise ValueError("Tối thiểu phải có 2 người chơi, bạn không thể remove người chơi được")
-        self.list_players()
-        id = int(input("Nhập ID người chơi bạn muốn loại khỏi cuộc chơi: "))
-        self.players.pop(id-1)
-        pass
+            raise ValueError("Tối thiểu phải có 2 người chơi, bạn không thể remove")
+        else:
+            self.list_players()
+            id = int(input("Nhập ID muốn remove: "))
+            self.players.pop(id-1)
+            print('Đã loại người chơi thành công')
+            self.list_players()
 
     def deal_card(self):
-        '''Chia bài cho người chơi'''
         if self.is_deal:
             raise ValueError("Bài đã chia rồi, lật bài đi thôi")
         deck = Deck()
@@ -95,25 +99,31 @@ class Game:
             for player in self.players:
                 player.add_card(deck.deal_card())
         self.is_deal = True  
-        print("Bài đã chia xong, xuống tiền nào")      
-    
+        print("Bài đã chia xong, xuống tiền nào", self.is_deal)   
+
     def flip_card(self):
         '''Lật bài tất cả người chơi, thông báo người chiến thắng'''
+        if not self.is_deal:
+            raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")
+        players=[]
+        self.winner = max(self.players)
         if not self.is_deal:
             raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")
         for player in self.players:
             print (f"Người chơi {player.name}", end=": ")
             print(player.flip_card(), end="")
             print (f", Tổng điểm {player.point}, lá bài lớn nhất {player.biggest_card}")
+            pass
         
         win = max(self.players)
         print(f"Chúc mừng {win.name} đã có tiền") 
         db.log(win, self.players)
 
+        '''
         self.is_deal = False
-        for player in self.players:
-            player.remove_card()
-        
+        for players in self.players:
+            players.remove_card()'''
+            
     def last_game(self):
         game, logs = db.get_last_game()
         if game is not None:
@@ -129,12 +139,6 @@ class Game:
         if historys is not None:
             for history in historys:
                count_all += history['count']
-               list_str += f"{history['winner']} thắng {history['count']} ván\n"   
-        print (f"Hôm nay đã chơi: {count_all} ván")     
+               list_str += f"\t{history['winner']} \tthắng {history['count']} ván\n"   
+        print (f"Tổng số ván đã chơi: {count_all} ván")     
         print (list_str)  
-
-                
-
-           
-        
-    

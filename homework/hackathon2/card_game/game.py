@@ -99,14 +99,14 @@ class Game:
             for player in self.players:
                 player.add_card(deck.deal_card())
         self.is_deal = True  
-        print("Bài đã chia xong, xuống tiền nào")   
+        print("Bài đã chia xong, xuống tiền nào", self.is_deal)   
 
     def flip_card(self):
         '''Lật bài tất cả người chơi, thông báo người chiến thắng'''
-        '''if not self.is_deal:
-            raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")'''
-            
-        #self.winner = max(self.players)
+        if not self.is_deal:
+            raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")
+        players=[]
+        self.winner = max(self.players)
         if not self.is_deal:
             raise ValueError("Chưa chia bài bạn ơi, chia đã rồi mới lật được nhé")
         for player in self.players:
@@ -118,9 +118,10 @@ class Game:
         print(f"Chúc mừng {win.name} đã có tiền") 
         db.log(win, self.players)
 
+        '''
         self.is_deal = False
-        for player in self.players:
-            player.remove_card()
+        for players in self.players:
+            players.remove_card()'''
             
     def last_game(self):
         game, logs = db.get_last_game()
